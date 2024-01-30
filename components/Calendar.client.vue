@@ -1,9 +1,9 @@
 <script setup>
 // https://github.com/vkurko/calendar
-import "@event-calendar/core/index.css";
 import Calendar from "@event-calendar/core";
-import TimeGrid from "@event-calendar/resource-time-grid";
+import "@event-calendar/core/index.css";
 import Interaction from "@event-calendar/interaction";
+import TimeGrid from "@event-calendar/resource-time-grid";
 
 const props = defineProps({
   date: String,
@@ -24,13 +24,13 @@ onMounted(async () => {
     props: {
       plugins: [TimeGrid, Interaction],
       options: {
-        slotMaxTime: "19:00:00",
-        slotMinTime: "09:00:00",
+        slotMinTime: "09:30:00",
+        slotMaxTime: "18:30:00",
+        slotDuration: "00:30:00",
         // height: "500px",
-        slotHeight: 12,
+        // slotHeight: 36,
         view: "resourceTimeGridDay",
         allDaySlot: false,
-        slotDuration: "00:15:00",
         headerToolbar: { start: "", center: "", end: "" },
         buttonText: (text) => ({
           ...text,
@@ -75,9 +75,6 @@ onMounted(async () => {
           { id: 1, title: "Studio A" },
           { id: 2, title: "Studio B" },
           { id: 3, title: "Studio C" },
-          { id: 4, title: "Studio D" },
-          { id: 5, title: "Studio E" },
-          { id: 6, title: "Studio F" },
         ],
         events: createEvents(),
       },
@@ -205,8 +202,8 @@ function _pad(num) {
   text-transform: capitalize;
 }
 
-.ec-time,
+/* .ec-time,
 .ec-line {
-  height: 12px;
-}
+  height: 36px;
+} */
 </style>
