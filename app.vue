@@ -1,18 +1,8 @@
-<script setup>
-const date = ref(getToday());
-
-function getToday() {
-  const today = new Date();
-  const month = today.getMonth() + 1;
-  const month_f = month < 10 ? "0" + month : month;
-  return today.getFullYear() + "-" + month_f + "-" + today.getDate();
-}
-</script>
+<script setup></script>
 
 <template>
   <div>
-    <input type="date" v-model="date" />
-    <Calendar :date="date" />
+    <NuxtPage />
   </div>
 </template>
 
@@ -24,9 +14,5 @@ function getToday() {
 
 body {
   padding: 1rem;
-}
-
-input[type="date"] {
-  margin-bottom: 1rem;
 }
 </style>
